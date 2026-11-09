@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>مولّد تقارير المعمل</title>
+<meta name="description" content="توليد ملفات Word لتقارير تحاليل مرضى وهميين لاختبار أنظمة المعامل.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0} [hidden]{display:none!important}</style>
+</head>
+<body>
+<div class="wrap" dir="rtl" lang="ar">
+  <header>
+    <h1>مولّد تقارير المعمل</h1>
+    <p>أدخل بيانات كل مريض وهمي، واختار التشخيص ومسار الحالة، وحمّل ملف Word لكل مريض بنفس شكل التقارير. النتايج بتتولد متسقة مع التشخيص ومتدرجة من يوم ليوم.</p>
+  </header>
+  <ul class="rules" aria-label="محتوى كل ملف">
+    <li><i class="cap" style="background:var(--gold)"></i>كلى وأملاح وCRP يومي</li>
+    <li><i class="cap" style="background:var(--lav)"></i>صورة دم يومي</li>
+    <li><i class="cap" style="background:var(--green)"></i>غازات الدم يومي</li>
+    <li><i class="cap" style="background:var(--blue)"></i>سيولة كل ٣ أيام</li>
+    <li><i class="cap" style="background:var(--grey)"></i>٨ تحاليل يوم الدخول</li>
+    <li><i class="cap" style="background:var(--grey)"></i>MI: إنزيمات القلب كل ٦ ساعات ثم كل ١٢ لحد ٧٢ ساعة</li>
+    <li><i class="cap" style="background:var(--green)"></i>DKA: غازات وأسيتون كل ١٢ ساعة لحد التحسن</li>
+    <li><i class="cap" style="background:var(--red)"></i>٣ مزارع ببكتيريا العناية المركزة، النتيجة بعد ٤–٥ أيام</li>
+  </ul>
+  <div class="list" id="list"></div>
+  <button class="btn add" id="add" type="button">+ إضافة مريض</button>
+  <p class="note">الأسماء ثابتة "مريض وهمي ١، ٢…" والمستشفى المحوِّل "مستشفى وهمي". كل مريض له رقم ثابت لحد ما تضغط "نتايج جديدة". المزارع دايماً بتطلع فيها بكتيريا من بكتيريا العناية المركزة، وكل عمود في جدول المضادات فيه مضادين على الأقل.</p>
+</div>
+<div class="bar" dir="rtl">
+  <div class="bar-in">
+    <span class="sum" id="sum"></span>
+    <span class="status" id="allStatus" aria-live="polite"></span>
+    <button class="btn primary" id="all" type="button">تنزيل الكل (zip)</button>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="js/core.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
